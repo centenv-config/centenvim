@@ -32,6 +32,7 @@ require("lazy").setup({
   require("plugins.bufferline"),
   require("plugins.conform"),
   require("plugins.dropbar"),
+  require("plugins.git-blame"),
   require("plugins.git-conflict"),
   -- require("plugins.nvim-tree"),
   require("plugins.gitsigns"),
