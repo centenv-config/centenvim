@@ -59,7 +59,7 @@ require("lazy").setup({
   require("plugins.themes.nightfox"),
   require("plugins.themes.onedark"),
   require("plugins.themes.onedarkpro"),
-})
+}, { timeout = 300 })
 
 
 -- [[ Language Configurations ]] --

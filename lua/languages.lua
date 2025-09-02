@@ -7,6 +7,7 @@ M.ensure_installed = {
   -- LSPs
   "bashls",
   "biome",
+  "clangd",
   "cssls",
   "css_variables",
   "docker_compose_language_service",
@@ -43,6 +44,7 @@ function M.load_languages()
   vim.lsp.enable("biome")
 
   lsp.bashls.setup { capabilities = blink_capabilities }
+  lsp.clangd.setup { capabilities = blink_capabilities }
   lsp.cssls.setup { capabilities = blink_capabilities }
   lsp.css_variables.setup { capabilities = blink_capabilities }
   lsp.docker_compose_language_service.setup { capabilities = blink_capabilities }
