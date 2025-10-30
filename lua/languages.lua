@@ -36,32 +36,13 @@ M.ensure_installed = {
 
 -- LSPs --
 function M.load_languages()
-  local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
-  local lsp = require("lspconfig")
   local dapui = require("dapui")
   dapui.setup()
 
-  vim.lsp.enable("biome")
-
-  lsp.bashls.setup { capabilities = blink_capabilities }
-  lsp.clangd.setup { capabilities = blink_capabilities }
-  lsp.cssls.setup { capabilities = blink_capabilities }
-  lsp.css_variables.setup { capabilities = blink_capabilities }
-  lsp.docker_compose_language_service.setup { capabilities = blink_capabilities }
-  lsp.dockerls.setup { capabilities = blink_capabilities }
-  -- lsp.eslint.setup { capabilities = blink_capabilities }
-  lsp.gh_actions_ls.setup { capabilities = blink_capabilities }
-  lsp.jdtls.setup { capabilities = blink_capabilities }
-  lsp.jsonls.setup { capabilities = blink_capabilities }
-  lsp.lua_ls.setup { capabilities = blink_capabilities }
-  lsp.marksman.setup { capabilities = blink_capabilities }
-  lsp.pyright.setup { capabilities = blink_capabilities }
-  lsp.postgres_lsp.setup { capabilities = blink_capabilities }
-  lsp.prismals.setup { capabilities = blink_capabilities }
-  lsp.rust_analyzer.setup { capabilities = blink_capabilities }
-  lsp.tailwindcss.setup { capabilities = blink_capabilities }
-  lsp.ts_ls.setup { capabilities = blink_capabilities }
-  lsp.yamlls.setup { capabilities = blink_capabilities }
+  -- Enable all Mason identifiers
+  for _, lsp_identifier in ipairs(M.ensure_installed) do
+    vim.lsp.enable(lsp_identifier)
+  end
 end
 
 
