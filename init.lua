@@ -110,7 +110,7 @@ vim.o.undofile = true
 vim.o.autowriteall = true
 -- Disable ~ in empty lines
 vim.opt.fillchars = { eob = " " }
--- Centralizred statusline
+-- Centralized statusline
 vim.opt.laststatus = 3
 -- TODO: ADD MORE
 

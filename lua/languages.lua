@@ -15,6 +15,7 @@ M.ensure_installed = {
   "eslint",
   "gh_actions_ls",
   "gitlab_ci_ls",
+  "gopls",
   "jdtls",
   "jsonls",
   "lua_ls",
