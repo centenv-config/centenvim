@@ -37,6 +37,7 @@ require("lazy").setup({
   -- require("plugins.nvim-tree"),
   require("plugins.gitsigns"),
   require("plugins.lualine"),
+  require("plugins.markview"),
   require("plugins.mason-tool-installer"),
   require("plugins.nvim-autopairs"),
   require("plugins.nvim-dap"),
@@ -53,6 +54,8 @@ require("lazy").setup({
   require("plugins.trouble"),
   require("plugins.ts-comments"),
   require("plugins.which-key"),
+  -- Language-specific plugins
+  require("plugins.langspec.nvim-java");
   -- Themes
   require("plugins.themes.catppuccin"),
   require("plugins.themes.github-nvim-theme"),
@@ -113,6 +116,17 @@ vim.opt.fillchars = { eob = " " }
 -- Centralized statusline
 vim.opt.laststatus = 3
 -- TODO: ADD MORE
+
+
+-- [[  ]]
+vim.api.nvim_create_autocmd("FileType",{
+  pattern = "lazy",
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+  end,
+});
+
 
 -- Load custom configurations
 require("core.options")
