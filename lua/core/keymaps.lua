@@ -14,9 +14,14 @@ local options = {
 }
 
 -- Basic Vim
+-- exit shortcut
 keymap.set("n", "<leader>qq", "<cmd> qa <CR>", keymap_opt("Quit", options))
+-- disable copying to clipboard on delete
 keymap.set({ "n", "v" }, "d", '"_d', options)
+-- disable copying to clipboard on substitute
 keymap.set("v", "s", '"_s', options)
+-- disable copying to clipboard on paste
+keymap.set("v", "p", '"_dP')
 
 -- Buffer Management
 -- list of buffers
