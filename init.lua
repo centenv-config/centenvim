@@ -92,42 +92,65 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plugins
 require("lazy").setup({
-  require("plugins.auto-save"),
-  require("plugins.blink-cmp"),
-  require("plugins.bufferline"),
-  require("plugins.conform"),
-  require("plugins.dropbar"),
-  require("plugins.git-blame"),
-  require("plugins.git-conflict"),
-  -- require("plugins.nvim-tree"),
-  require("plugins.gitsigns"),
-  require("plugins.lualine"),
-  require("plugins.markview"),
-  require("plugins.mason-tool-installer"),
-  require("plugins.nvim-autopairs"),
-  require("plugins.nvim-dap"),
-  require("plugins.nvim-lint"),
-  require("plugins.nvim-lspconfig"),
-  require("plugins.nvim-treesitter"),
-  require("plugins.nvim-ts-autotag"),
-  require("plugins.mason"),
-  require("plugins.mini-icons"),
-  require("plugins.noice"),
-  require("plugins.snacks"),
-  require("plugins.telescope"),
-  require("plugins.todo-comments"),
-  require("plugins.trouble"),
-  require("plugins.ts-comments"),
-  require("plugins.which-key"),
-  -- Language-specific plugins
-  require("plugins.langspec.nvim-java");
-  -- Themes
-  require("plugins.themes.catppuccin"),
-  require("plugins.themes.github-nvim-theme"),
-  require("plugins.themes.nightfox"),
-  require("plugins.themes.onedark"),
-  require("plugins.themes.onedarkpro"),
-}, { timeout = 300 })
+    require("plugins.auto-save"),
+    require("plugins.blink-cmp"),
+    require("plugins.bufferline"),
+    require("plugins.conform"),
+    require("plugins.dropbar"),
+    require("plugins.git-blame"),
+    require("plugins.git-conflict"),
+    -- require("plugins.nvim-tree"),
+    require("plugins.gitsigns"),
+    require("plugins.lualine"),
+    require("plugins.markview"),
+    require("plugins.mason-tool-installer"),
+    require("plugins.nvim-autopairs"),
+    require("plugins.nvim-dap"),
+    require("plugins.nvim-lint"),
+    require("plugins.nvim-lspconfig"),
+    require("plugins.nvim-treesitter"),
+    require("plugins.nvim-ts-autotag"),
+    require("plugins.mason"),
+    require("plugins.mini-icons"),
+    require("plugins.noice"),
+    require("plugins.snacks"),
+    require("plugins.telescope"),
+    require("plugins.todo-comments"),
+    require("plugins.trouble"),
+    require("plugins.ts-comments"),
+    require("plugins.which-key"),
+    -- Language-specific plugins
+    require("plugins.langspec.nvim-java");
+    -- Themes
+    require("plugins.themes.catppuccin"),
+    require("plugins.themes.github-nvim-theme"),
+    require("plugins.themes.nightfox"),
+    require("plugins.themes.onedark"),
+    require("plugins.themes.onedarkpro"),
+  },
+  {
+    timeout = 300,
+    ui = {
+      -- If you are using a Nerd Font: set icons to an empty table which will use the
+      -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+      icons = vim.g.have_nerd_font and {} or {
+        cmd = '⌘',
+        config = '🛠',
+        event = '📅',
+        ft = '📂',
+        init = '⚙',
+        keys = '🗝',
+        plugin = '🔌',
+        runtime = '💻',
+        require = '🌙',
+        source = '📄',
+        start = '🚀',
+        task = '📌',
+        lazy = '💤 ',
+      }
+    }
+  }
+)
 
 
 -- [[ Language Configurations ]] --
