@@ -4,8 +4,6 @@ require("util")
 local keymap = vim.keymap
 
 -- <leader>
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 local options = {

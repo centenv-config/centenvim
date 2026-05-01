@@ -11,7 +11,6 @@ vim.opt.background = "dark"
 vim.g.snacks_animate = false
 
 -- Diagnostic display
-vim.o.signcolumn = "yes"
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,

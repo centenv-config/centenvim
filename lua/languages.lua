@@ -5,32 +5,32 @@ local M = {}
 -- All LSPs, DAPs, Linters, Formatters to be installed by Mason
 M.ensure_installed = {
   -- LSPs
-  "bashls",
-  "biome",
-  "clangd",
-  "cssls",
-  "css_variables",
-  "docker_compose_language_service",
-  "dockerls",
-  "eslint",
-  "gh_actions_ls",
-  "gitlab_ci_ls",
-  "gopls",
-  "jdtls",
-  "jsonls",
-  "lua_ls",
-  "marksman",
-  "pyright",
-  "postgres_lsp",
-  "prismals",
-  "rust_analyzer",
-  "tailwindcss",
-  "ts_ls",
-  "yamlls",
+  -- "bashls",
+  -- "biome",
+  -- "clangd",
+  -- "cssls",
+  -- "css_variables",
+  -- "docker_compose_language_service",
+  -- "dockerls",
+  -- "eslint",
+  -- "gh_actions_ls",
+  -- "gitlab_ci_ls",
+  -- "gopls",
+  -- "jdtls",
+  -- "jsonls",
+  -- "lua_ls",
+  -- "marksman",
+  -- "pyright",
+  -- "postgres_lsp",
+  -- "prismals",
+  -- "rust_analyzer",
+  -- "tailwindcss",
+  -- "ts_ls",
+  -- "yamlls",
   -- DAPs (TODO: Add)
   -- Linters
-  "biome",
-  "eslint_d"
+  -- "biome",
+  -- "eslint_d"
   -- Formatters
   -- "prettier"
 }
@@ -66,27 +66,27 @@ end
 
 -- Linters --
 -- Reference: https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
-function M.load_linters()
-  require("lint").linters_by_ft = {
-    javascript = { "biomejs" },
-    javascriptreact = { "biomejs" },
-    typescript = { "biomejs" },
-    typescriptreact = { "biomejs" },
-  }
-end
-
-
--- Formatters --
-function M.load_formatters()
-  require("conform").setup({
-    formatters_by_ft = {
-      javascript = { "prettier", "biome" },
-      -- javascriptreact = { "prettier" },
-      typescript = { "prettier", "biome" },
-      -- typescriptreact = { "prettier" },
-    }
-  })
-end
+-- function M.load_linters()
+--   require("lint").linters_by_ft = {
+--     javascript = { "biomejs" },
+--     javascriptreact = { "biomejs" },
+--     typescript = { "biomejs" },
+--     typescriptreact = { "biomejs" },
+--   }
+-- end
+--
+--
+-- -- Formatters --
+-- function M.load_formatters()
+--   require("conform").setup({
+--     formatters_by_ft = {
+--       javascript = { "prettier", "biome" },
+--       -- javascriptreact = { "prettier" },
+--       typescript = { "prettier", "biome" },
+--       -- typescriptreact = { "prettier" },
+--     }
+--   })
+-- end
 
 
 
