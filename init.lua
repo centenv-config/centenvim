@@ -91,7 +91,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Plugins
-require("lazy").setup({
+require("lazy").setup(
+  {
     require("plugins.auto-save"),
     require("plugins.blink-cmp"),
     require("plugins.bufferline"),
@@ -101,6 +102,7 @@ require("lazy").setup({
     require("plugins.git-conflict"),
     -- require("plugins.nvim-tree"),
     require("plugins.gitsigns"),
+    require("plugins.guess-indent"),
     require("plugins.lualine"),
     require("plugins.markview"),
     require("plugins.mason-tool-installer"),
@@ -162,7 +164,7 @@ require("mason-tool-installer").setup {
 -- Load all language configurations
 require("languages").load_languages()
 require("languages").load_dap_configs()
-require("languages").load_linters()
+-- require("languages").load_linters()
 
 
 -- [[ UI Defaults ]] --
