@@ -66,27 +66,27 @@ end
 
 -- Linters --
 -- Reference: https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
-function M.load_linters()
-  require("lint").linters_by_ft = {
-    javascript = { "biomejs" },
-    javascriptreact = { "biomejs" },
-    typescript = { "biomejs" },
-    typescriptreact = { "biomejs" },
-  }
-end
-
-
--- Formatters --
-function M.load_formatters()
-  require("conform").setup({
-    formatters_by_ft = {
-      javascript = { "prettier", "biome" },
-      -- javascriptreact = { "prettier" },
-      typescript = { "prettier", "biome" },
-      -- typescriptreact = { "prettier" },
-    }
-  })
-end
+-- function M.load_linters()
+--   require("lint").linters_by_ft = {
+--     javascript = { "biomejs" },
+--     javascriptreact = { "biomejs" },
+--     typescript = { "biomejs" },
+--     typescriptreact = { "biomejs" },
+--   }
+-- end
+--
+--
+-- -- Formatters --
+-- function M.load_formatters()
+--   require("conform").setup({
+--     formatters_by_ft = {
+--       javascript = { "prettier", "biome" },
+--       -- javascriptreact = { "prettier" },
+--       typescript = { "prettier", "biome" },
+--       -- typescriptreact = { "prettier" },
+--     }
+--   })
+-- end
 
 
 

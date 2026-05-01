@@ -73,6 +73,16 @@ vim.opt.fillchars = { eob = " " }
 vim.opt.laststatus = 3
 
 
+-- HACK: Hide line numbers in lazy.nvim window
+vim.api.nvim_create_autocmd("FileType",{
+  pattern = "lazy",
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+  end,
+});
+
+
 -- [[ Plugin manager - lazy.nvim ]] --
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -177,15 +187,6 @@ require("core.statusline")
 -- TODO: ADD MORE
 
 
--- Hide line numbers in lazy.nvim window
--- TOOD: move to the top
-vim.api.nvim_create_autocmd("FileType",{
-  pattern = "lazy",
-  callback = function()
-    vim.opt_local.number = false
-    vim.opt_local.relativenumber = false
-  end,
-});
 
 
 -- Load custom configurations
