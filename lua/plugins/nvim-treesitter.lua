@@ -5,8 +5,7 @@ return {
   lazy = false,
   config = function()
       -- ensure basic parser are installed
-      local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
-      require('nvim-treesitter').install(parsers)
+      require('nvim-treesitter').install(require("languages").default_parsers)
 
       ---@param buf integer
       ---@param language string

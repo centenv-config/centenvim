@@ -2,7 +2,7 @@
 -- Names via nvim-lspconfig
 local M = {}
 
--- All LSPs, DAPs, Linters, Formatters to be installed by Mason
+-- All LSPs to be installed by Mason
 M.ensure_installed = {
   -- LSPs
   -- "bashls",
@@ -27,10 +27,13 @@ M.ensure_installed = {
   -- "tailwindcss",
   -- "ts_ls",
   -- "yamlls",
+
   -- DAPs (TODO: Add)
+
   -- Linters
   -- "biome",
   -- "eslint_d"
+
   -- Formatters
   -- "prettier"
 }
@@ -49,10 +52,10 @@ end
 
 -- DAPs --
 M.ensure_installed_dap = {
-  "codelldb",
-  "cppdbg",
-  "javadbg",
-  "python",
+  -- "codelldb",
+  -- "cppdbg",
+  -- "javadbg",
+  -- "python",
 }
 
 M.dap_lang_plugins = {
@@ -88,6 +91,14 @@ end
 --   })
 -- end
 
-
+M.default_parsers = {
+  'bash',
+  'c',
+  'diff',
+  'html',
+  'lua',
+  'luadoc',
+  'markdown',
+}
 
 return M
