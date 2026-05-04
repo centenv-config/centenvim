@@ -1,7 +1,6 @@
 ----- [[ CentenVim ]] -----
 -- CentenV's custom Neovim configuration
 
-
 -- WARNING: !!!
 -- This file contains configurations that are backbone to the customization of Neovim.
 -- Parameters that potentially/are subject to be changed are stored in core.options
@@ -71,6 +70,8 @@ vim.o.autowriteall = true
 vim.opt.fillchars = { eob = " " }
 -- Centralized statusline
 vim.opt.laststatus = 3
+
+vim.o.winborder = "rounded"
 
 
 -- HACK: Hide line numbers in lazy.nvim window
