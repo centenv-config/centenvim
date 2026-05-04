@@ -53,7 +53,7 @@ return {
         ["<Esc>"] = { "hide", "fallback" },
         ["<C-j>"] = { "select_next", "fallback" },
         ["<C-k>"] = { "select_prev", "fallback" },
-      }
+      },
     },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
