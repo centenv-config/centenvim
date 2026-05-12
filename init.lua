@@ -107,6 +107,7 @@ require("lazy").setup(
     require("plugins.auto-save"),
     require("plugins.blink-cmp"),
     require("plugins.bufferline"),
+    require("plugins.colorful-menu"),
     require("plugins.conform"),
     require("plugins.dropbar"),
     require("plugins.git-blame"),
