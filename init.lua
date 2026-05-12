@@ -74,16 +74,6 @@ vim.opt.laststatus = 3
 vim.o.winborder = "rounded"
 
 
--- HACK: Hide line numbers in lazy.nvim window
-vim.api.nvim_create_autocmd("FileType",{
-  pattern = "lazy",
-  callback = function()
-    vim.opt_local.number = false
-    vim.opt_local.relativenumber = false
-  end,
-});
-
-
 -- [[ Plugin manager - lazy.nvim ]] --
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -104,47 +94,13 @@ vim.opt.rtp:prepend(lazypath)
 -- Plugins
 require("lazy").setup(
   {
-    require("plugins.auto-save"),
-    require("plugins.blink-cmp"),
-    require("plugins.bufferline"),
-    require("plugins.colorful-menu"),
-    require("plugins.conform"),
-    require("plugins.dropbar"),
-    require("plugins.git-blame"),
-    require("plugins.git-conflict"),
-    -- require("plugins.nvim-tree"),
-    require("plugins.gitsigns"),
-    require("plugins.guess-indent"),
-    require("plugins.lualine"),
-    require("plugins.markview"),
-    require("plugins.mason-tool-installer"),
-    require("plugins.nvim-autopairs"),
-    require("plugins.nvim-dap"),
-    require("plugins.nvim-lint"),
-    require("plugins.nvim-lspconfig"),
-    require("plugins.nvim-treesitter"),
-    require("plugins.nvim-ts-autotag"),
-    require("plugins.roslyn-nvim"),
-    require("plugins.mason"),
-    require("plugins.mini-icons"),
-    require("plugins.noice"),
-    require("plugins.snacks"),
-    require("plugins.telescope"),
-    require("plugins.todo-comments"),
-    require("plugins.trouble"),
-    require("plugins.ts-comments"),
-    require("plugins.which-key"),
-    -- Language-specific plugins
-    require("plugins.langspec.nvim-java");
-    -- Themes
-    require("plugins.themes.catppuccin"),
-    require("plugins.themes.github-nvim-theme"),
-    require("plugins.themes.nightfox"),
-    require("plugins.themes.onedark"),
-    require("plugins.themes.onedarkpro"),
+    -- Imports all plugins specified in lua/plugins
+    spec = {
+      { import = "plugins" }
+    },
+    install = { colorscheme = { "habamax" } },
   },
   {
-    timeout = 300,
     ui = {
       -- If you are using a Nerd Font: set icons to an empty table which will use the
       -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
@@ -172,7 +128,8 @@ require("lazy").setup(
 -- Ensure all LSPs, DAPs, Linters, Formatters are installed
 require("mason-tool-installer").setup {
   ensure_installed = require("languages").ensure_installed,
-  automatic_installation = true
+  automatic_installation = true,
+  auto_update = true,
 }
 -- Load all language configurations
 require("languages").load_languages()
