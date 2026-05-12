@@ -30,6 +30,11 @@ keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", keymap_opt("Next Buff
 keymap.set("n", "<leader>bd", function()
   require("snacks").bufdelete()
 end, keymap_opt("Close Buffer", options))
+-- hard close
+keymap.set("n", "<leader>bD", function()
+  require("snacks").bufdelete()
+  vim.cmd.quit()
+end, keymap_opt("Close Buffer & Window", options))
 -- reorder
 keymap.set("n", "<leader>b<Left>", "<cmd>BufferLineMovePrev<CR>", keymap_opt("Move Buffer Left", options))
 keymap.set("n", "<leader>b<Right>", "<cmd>BufferLineMoveNext<CR>", keymap_opt("Move Buffer Left", options))
