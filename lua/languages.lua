@@ -1,4 +1,6 @@
 -- [[ Language Components ]] --
+-- Uncommment what is needed
+
 -- Names via nvim-lspconfig
 local M = {}
 
@@ -47,6 +49,13 @@ function M.load_languages()
   for _, lsp_identifier in ipairs(M.ensure_installed) do
     vim.lsp.enable(lsp_identifier)
   end
+end
+
+-- Language Specific Plugins --
+function M.load_langspec()
+  require("lazy").setup({
+    require("plugins.langspec.nvim-java")
+  })
 end
 
 
