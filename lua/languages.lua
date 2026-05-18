@@ -101,13 +101,13 @@ end
 -- end
 
 M.default_parsers = {
-  'bash',
-  'c',
-  'diff',
-  'html',
-  'lua',
-  'luadoc',
-  'markdown',
+  -- 'bash',
+  -- 'c',
+  -- 'diff',
+  -- 'html',
+  -- 'lua',
+  -- 'luadoc',
+  -- 'markdown',
 }
 
 return M

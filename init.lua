@@ -92,36 +92,32 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Plugins
-require("lazy").setup(
-  {
-    -- Imports all plugins specified in lua/plugins
-    spec = {
-      { import = "plugins" }
-    },
-    install = { colorscheme = { "habamax" } },
+require("lazy").setup({
+  -- Imports all plugins specified in lua/plugins
+  spec = {
+    { import = "plugins" }
   },
-  {
-    ui = {
-      -- If you are using a Nerd Font: set icons to an empty table which will use the
-      -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-      icons = vim.g.have_nerd_font and {} or {
-        cmd = '⌘',
-        config = '🛠',
-        event = '📅',
-        ft = '📂',
-        init = '⚙',
-        keys = '🗝',
-        plugin = '🔌',
-        runtime = '💻',
-        require = '🌙',
-        source = '📄',
-        start = '🚀',
-        task = '📌',
-        lazy = '💤 ',
-      }
+  install = { colorscheme = { "habamax" } },
+  ui = {
+    -- If you are using a Nerd Font: set icons to an empty table which will use the
+    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+    icons = vim.g.have_nerd_font and {} or {
+      cmd = '⌘',
+      config = '🛠',
+      event = '📅',
+      ft = '📂',
+      init = '⚙',
+      keys = '🗝',
+      plugin = '🔌',
+      runtime = '💻',
+      require = '🌙',
+      source = '📄',
+      start = '🚀',
+      task = '📌',
+      lazy = '💤 ',
     }
   }
-)
+})
 
 
 -- [[ Language Configurations ]] --
@@ -136,18 +132,11 @@ require("languages").load_languages()
 require("languages").load_dap_configs()
 -- require("languages").load_linters()
 
-
 -- [[ UI Defaults ]] --
 -- Load default theme
 vim.cmd("colorscheme carbonfox")
 -- Load Lualine config
 require("core.statusline")
-
-
--- TODO: ADD MORE
-
-
-
 
 -- Load custom configurations
 require("core.options")
